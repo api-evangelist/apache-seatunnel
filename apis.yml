@@ -1,0 +1,35 @@
+aid: apache-seatunnel
+name: Apache SeaTunnel
+description: >-
+  Apache SeaTunnel is a high-performance, distributed data integration platform that supports real-time and batch data synchronization. It provides a connector API with support for over 100 data sources and sinks.
+type: Index
+position: Consumer
+access: 3rd-Party
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Data Integration
+  - ETL
+  - Batch Processing
+  - Streaming
+  - Connectors
+created: '2026-03-16'
+modified: '2026-03-16'
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/apache-seatunnel/refs/heads/main/apis.yml
+specificationVersion: '0.19'
+apis:
+  - aid: apache-seatunnel:apache-seatunnel-rest-api
+    name: Apache SeaTunnel REST API
+    description: >-
+      SeaTunnel provides a REST API for job management and monitoring, a Connector API for building custom data sources and sinks, and a Transform API for data transformation, supporting over 100 built-in connectors.
+    humanURL: https://seatunnel.apache.org/docs/
+    tags:
+      - REST
+      - Connectors
+      - Data Integration
+    properties:
+      - type: Documentation
+        url: https://seatunnel.apache.org/docs/
+maintainers:
+  - FN: Kin Lane
+    email: info@apievangelist.com
