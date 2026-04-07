@@ -7,11 +7,11 @@ position: Consumer
 access: 3rd-Party
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
+  - Batch Processing
+  - Connectors
   - Data Integration
   - ETL
-  - Batch Processing
   - Streaming
-  - Connectors
 created: '2026-03-16'
 modified: '2026-03-16'
 url: >-
@@ -24,9 +24,9 @@ apis:
       SeaTunnel provides a REST API for job management and monitoring, a Connector API for building custom data sources and sinks, and a Transform API for data transformation, supporting over 100 built-in connectors.
     humanURL: https://seatunnel.apache.org/docs/
     tags:
-      - REST
       - Connectors
       - Data Integration
+      - REST
     properties:
       - type: Documentation
         url: https://seatunnel.apache.org/docs/
