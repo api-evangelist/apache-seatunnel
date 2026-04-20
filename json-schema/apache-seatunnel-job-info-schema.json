@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-seatunnel/refs/heads/main/json-schema/apache-seatunnel-job-info-schema.json",
+  "title": "JobInfo",
+  "description": "Summary info for a SeaTunnel job",
+  "type": "object",
+  "properties": {
+    "jobId": {
+      "type": "string",
+      "description": "Job identifier"
+    },
+    "jobName": {
+      "type": "string",
+      "description": "Job name"
+    },
+    "jobStatus": {
+      "type": "string",
+      "enum": [
+        "RUNNING",
+        "FINISHED",
+        "FAILED",
+        "CANCELED",
+        "CANCELLING"
+      ],
+      "description": "Current job status"
+    },
+    "createTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "finishTime": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-seatunnel/refs/heads/main/json-structure/apache-seatunnel-job-stop-request-structure.json",
+  "description": "Request to stop a SeaTunnel job",
+  "type": "object",
+  "properties": {
+    "jobId": {
+      "type": "string",
+      "description": "Job identifier to stop"
+    },
+    "isStopWithSavePoint": {
+      "type": "boolean",
+      "description": "Whether to create a savepoint before stopping"
+    }
+  },
+  "required": [
+    "jobId"
+  ],
+  "name": "JobStopRequest"
+}

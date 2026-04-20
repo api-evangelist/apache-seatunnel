@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-seatunnel/refs/heads/main/json-schema/apache-seatunnel-job-stop-result-schema.json",
+  "title": "JobStopResult",
+  "description": "Result of stopping a job",
+  "type": "object",
+  "properties": {
+    "jobId": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    }
+  }
+}

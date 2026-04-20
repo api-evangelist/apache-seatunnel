@@ -1,0 +1,10 @@
+{
+  "jobId": "500123",
+  "jobName": "example-name",
+  "jobStatus": "RUNNING",
+  "jobDag": {},
+  "metrics": {},
+  "createTime": "2026-04-19T10:00:00Z",
+  "finishTime": "2026-04-19T10:00:00Z",
+  "errorMsg": "example"
+}

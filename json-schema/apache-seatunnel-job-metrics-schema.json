@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-seatunnel/refs/heads/main/json-schema/apache-seatunnel-job-metrics-schema.json",
+  "title": "JobMetrics",
+  "description": "Runtime metrics for a SeaTunnel job",
+  "type": "object",
+  "properties": {
+    "sourceReceivedCount": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Total records read from source"
+    },
+    "sinkWriteCount": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Total records written to sink"
+    },
+    "sourceReceivedQPS": {
+      "type": "number",
+      "description": "Records per second from source"
+    },
+    "sinkWriteQPS": {
+      "type": "number",
+      "description": "Records per second to sink"
+    }
+  }
+}

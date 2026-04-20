@@ -1,0 +1,146 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "seat": "https://seatunnel.apache.org/schema/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "JobList": "seat:JobList",
+    "JobInfo": "seat:JobInfo",
+    "JobSubmitRequest": "seat:JobSubmitRequest",
+    "JobSubmitResult": "seat:JobSubmitResult",
+    "JobDetail": "seat:JobDetail",
+    "JobMetrics": "seat:JobMetrics",
+    "JobStopRequest": "seat:JobStopRequest",
+    "JobStopResult": "seat:JobStopResult",
+    "SystemInfo": "seat:SystemInfo",
+    "ClusterOverview": "seat:ClusterOverview",
+    "jobs": {
+      "@id": "seat:jobs",
+      "@container": "@set"
+    },
+    "total": {
+      "@id": "seat:total",
+      "@type": "xsd:integer"
+    },
+    "jobId": {
+      "@id": "seat:jobId",
+      "@type": "xsd:string"
+    },
+    "jobName": {
+      "@id": "seat:jobName",
+      "@type": "xsd:string"
+    },
+    "jobStatus": {
+      "@id": "seat:jobStatus",
+      "@type": "xsd:string"
+    },
+    "createTime": {
+      "@id": "seat:createTime",
+      "@type": "xsd:string"
+    },
+    "finishTime": {
+      "@id": "seat:finishTime",
+      "@type": "xsd:string"
+    },
+    "jobContent": {
+      "@id": "seat:jobContent",
+      "@type": "xsd:string"
+    },
+    "isStartWithSavePoint": {
+      "@id": "seat:isStartWithSavePoint",
+      "@type": "xsd:boolean"
+    },
+    "jobDag": {
+      "@id": "seat:jobDag",
+      "@type": "xsd:string"
+    },
+    "metrics": {
+      "@id": "seat:metrics",
+      "@type": "xsd:string"
+    },
+    "errorMsg": {
+      "@id": "seat:errorMsg",
+      "@type": "xsd:string"
+    },
+    "sourceReceivedCount": {
+      "@id": "seat:sourceReceivedCount",
+      "@type": "xsd:integer"
+    },
+    "sinkWriteCount": {
+      "@id": "seat:sinkWriteCount",
+      "@type": "xsd:integer"
+    },
+    "sourceReceivedQPS": {
+      "@id": "seat:sourceReceivedQPS",
+      "@type": "xsd:decimal"
+    },
+    "sinkWriteQPS": {
+      "@id": "seat:sinkWriteQPS",
+      "@type": "xsd:decimal"
+    },
+    "isStopWithSavePoint": {
+      "@id": "seat:isStopWithSavePoint",
+      "@type": "xsd:boolean"
+    },
+    "status": {
+      "@id": "seat:status",
+      "@type": "xsd:string"
+    },
+    "message": {
+      "@id": "seat:message",
+      "@type": "xsd:string"
+    },
+    "processors": {
+      "@id": "seat:processors",
+      "@type": "xsd:integer"
+    },
+    "physicalMemory": {
+      "@id": "seat:physicalMemory",
+      "@type": "xsd:integer"
+    },
+    "freePhysicalMemory": {
+      "@id": "seat:freePhysicalMemory",
+      "@type": "xsd:integer"
+    },
+    "totalHeapMemory": {
+      "@id": "seat:totalHeapMemory",
+      "@type": "xsd:integer"
+    },
+    "freeHeapMemory": {
+      "@id": "seat:freeHeapMemory",
+      "@type": "xsd:integer"
+    },
+    "usedHeapMemory": {
+      "@id": "seat:usedHeapMemory",
+      "@type": "xsd:integer"
+    },
+    "workers": {
+      "@id": "seat:workers",
+      "@type": "xsd:integer"
+    },
+    "runningJobs": {
+      "@id": "seat:runningJobs",
+      "@type": "xsd:integer"
+    },
+    "finishedJobs": {
+      "@id": "seat:finishedJobs",
+      "@type": "xsd:integer"
+    },
+    "failedJobs": {
+      "@id": "seat:failedJobs",
+      "@type": "xsd:integer"
+    },
+    "canceledJobs": {
+      "@id": "seat:canceledJobs",
+      "@type": "xsd:integer"
+    },
+    "totalSlot": {
+      "@id": "seat:totalSlot",
+      "@type": "xsd:integer"
+    },
+    "usedSlot": {
+      "@id": "seat:usedSlot",
+      "@type": "xsd:integer"
+    }
+  }
+}

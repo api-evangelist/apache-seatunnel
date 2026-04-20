@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-seatunnel/refs/heads/main/json-structure/apache-seatunnel-job-submit-result-structure.json",
+  "description": "Result of submitting a job",
+  "type": "object",
+  "properties": {
+    "jobId": {
+      "type": "string",
+      "description": "Assigned job identifier"
+    },
+    "jobName": {
+      "type": "string"
+    }
+  },
+  "name": "JobSubmitResult"
+}

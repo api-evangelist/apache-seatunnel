@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-seatunnel/refs/heads/main/json-structure/apache-seatunnel-cluster-overview-structure.json",
+  "description": "High-level cluster overview",
+  "type": "object",
+  "properties": {
+    "workers": {
+      "type": "int32",
+      "description": "Number of worker nodes"
+    },
+    "runningJobs": {
+      "type": "int32",
+      "description": "Number of running jobs"
+    },
+    "finishedJobs": {
+      "type": "int32",
+      "description": "Number of finished jobs"
+    },
+    "failedJobs": {
+      "type": "int32",
+      "description": "Number of failed jobs"
+    },
+    "canceledJobs": {
+      "type": "int32",
+      "description": "Number of canceled jobs"
+    },
+    "totalSlot": {
+      "type": "int32",
+      "description": "Total available task slots"
+    },
+    "usedSlot": {
+      "type": "int32",
+      "description": "Currently used task slots"
+    }
+  },
+  "name": "ClusterOverview"
+}

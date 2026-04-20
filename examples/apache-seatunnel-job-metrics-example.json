@@ -1,0 +1,6 @@
+{
+  "sourceReceivedCount": 1234,
+  "sinkWriteCount": 1234,
+  "sourceReceivedQPS": 0.5,
+  "sinkWriteQPS": 0.5
+}

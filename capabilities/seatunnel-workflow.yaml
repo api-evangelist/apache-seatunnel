@@ -1,0 +1,59 @@
+name: Apache SeaTunnel Data Integration Workflow
+description: Workflow capability for submitting and managing data integration jobs with Apache SeaTunnel.
+version: 1.0.0-alpha1
+apis:
+  - name: Apache SeaTunnel REST API
+    url: https://raw.githubusercontent.com/api-evangelist/apache-seatunnel/refs/heads/main/apis.yml
+shared:
+  - url: capabilities/shared/seatunnel-api.yaml
+workflow:
+  name: seatunnel-workflow
+  description: Submit, monitor, and manage SeaTunnel data sync jobs across sources and sinks.
+  steps:
+    - name: get-overview
+      description: Check cluster status and capacity
+      api: Apache SeaTunnel REST API
+      operation: getOverview
+    - name: submit-job
+      description: Submit a data integration job
+      api: Apache SeaTunnel REST API
+      operation: submitJob
+    - name: get-job
+      description: Monitor job progress and metrics
+      api: Apache SeaTunnel REST API
+      operation: getJob
+    - name: stop-job
+      description: Stop a running job
+      api: Apache SeaTunnel REST API
+      operation: stopJob
+exposes:
+  - type: rest
+    port: 5801
+    paths:
+      - /hazelcast/rest/maps/running-jobs
+      - /hazelcast/rest/maps/job/submit
+      - /hazelcast/rest/maps/job/{jobId}
+      - /hazelcast/rest/maps/job/stop
+      - /hazelcast/rest/maps/system-monitoring-information
+      - /hazelcast/rest/maps/overview
+  - type: mcp
+    port: 9090
+    tools:
+      - name: list-running-jobs
+        description: List running data sync jobs
+        operation: listRunningJobs
+      - name: submit-job
+        description: Submit a data integration job
+        operation: submitJob
+      - name: get-job
+        description: Get job status and metrics
+        operation: getJob
+      - name: stop-job
+        description: Stop a data sync job
+        operation: stopJob
+      - name: get-system-info
+        description: Get system resource information
+        operation: getSystemInfo
+      - name: get-overview
+        description: Get cluster overview
+        operation: getOverview

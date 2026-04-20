@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-seatunnel/refs/heads/main/json-structure/apache-seatunnel-job-list-structure.json",
+  "description": "List of SeaTunnel jobs",
+  "type": "object",
+  "properties": {
+    "jobs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/JobInfo"
+      }
+    },
+    "total": {
+      "type": "int32"
+    }
+  },
+  "name": "JobList"
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-seatunnel/refs/heads/main/json-structure/apache-seatunnel-system-info-structure.json",
+  "description": "SeaTunnel system monitoring information",
+  "type": "object",
+  "properties": {
+    "processors": {
+      "type": "int32",
+      "description": "Number of CPU processors"
+    },
+    "physicalMemory": {
+      "type": "int64",
+      "description": "Total physical memory in bytes"
+    },
+    "freePhysicalMemory": {
+      "type": "int64",
+      "description": "Free physical memory in bytes"
+    },
+    "totalHeapMemory": {
+      "type": "int64"
+    },
+    "freeHeapMemory": {
+      "type": "int64"
+    },
+    "usedHeapMemory": {
+      "type": "int64"
+    }
+  },
+  "name": "SystemInfo"
+}

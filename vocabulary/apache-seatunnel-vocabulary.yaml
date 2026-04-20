@@ -1,0 +1,49 @@
+name: Apache SeaTunnel Vocabulary
+description: Unified taxonomy mapping data integration resources, actions, workflows, and personas for Apache SeaTunnel.
+version: 1.0.0
+operational:
+  apis:
+    - name: Apache SeaTunnel REST API
+      description: REST API for managing data integration jobs
+  resources:
+    - name: Job
+      description: Data sync or integration job
+    - name: JobMetrics
+      description: Runtime performance metrics for a job
+    - name: Connector
+      description: Source or sink connector plugin
+    - name: Pipeline
+      description: Data transformation pipeline within a job
+  actions:
+    - name: Submit
+      description: Submit a new data sync job
+    - name: Stop
+      description: Stop a running job
+    - name: Monitor
+      description: Monitor job metrics and cluster status
+    - name: Configure
+      description: Define source, transform, and sink configuration
+  authentication:
+    - name: None
+      description: Default unauthenticated access (configure auth in production)
+capability:
+  workflows:
+    - name: Data Integration Workflow
+      description: End-to-end data synchronization from source to sink
+  personas:
+    - name: Data Engineer
+      description: Engineer designing and operating data pipelines
+    - name: Platform Engineer
+      description: Engineer managing SeaTunnel clusters
+  domains:
+    - name: Data Integration
+      description: Moving and transforming data between systems
+    - name: ETL
+      description: Extract, Transform, Load pipeline processing
+  crossReference:
+    - name: Apache Kafka
+      description: Streaming source and sink connector
+    - name: Apache Flink
+      description: Alternative stream processing engine
+    - name: Apache Spark
+      description: Alternative batch and stream processing

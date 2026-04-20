@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-seatunnel/refs/heads/main/json-structure/apache-seatunnel-job-detail-structure.json",
+  "description": "Detailed information about a SeaTunnel job",
+  "type": "object",
+  "properties": {
+    "jobId": {
+      "type": "string"
+    },
+    "jobName": {
+      "type": "string"
+    },
+    "jobStatus": {
+      "type": "string",
+      "enum": [
+        "RUNNING",
+        "FINISHED",
+        "FAILED",
+        "CANCELED",
+        "CANCELLING"
+      ]
+    },
+    "jobDag": {
+      "type": "object",
+      "description": "Job DAG definition"
+    },
+    "metrics": {
+      "$ref": "#/components/schemas/JobMetrics"
+    },
+    "createTime": {
+      "type": "datetime"
+    },
+    "finishTime": {
+      "type": "datetime"
+    },
+    "errorMsg": {
+      "type": "string",
+      "description": "Error message if job failed"
+    }
+  },
+  "name": "JobDetail"
+}

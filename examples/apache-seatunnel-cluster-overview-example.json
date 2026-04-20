@@ -1,0 +1,9 @@
+{
+  "workers": 1234,
+  "runningJobs": 1234,
+  "finishedJobs": 1234,
+  "failedJobs": 1234,
+  "canceledJobs": 1234,
+  "totalSlot": 1234,
+  "usedSlot": 1234
+}
