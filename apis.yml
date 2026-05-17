@@ -52,7 +52,7 @@ common:
   url: vocabulary/apache-seatunnel-vocabulary.yaml
 - type: NaftikoCapability
   url: capabilities/seatunnel-workflow.yaml
-- type: JSON-LD
+- type: JSONLD
   url: json-ld/apache-seatunnel-context.jsonld
 - type: Features
   data:
