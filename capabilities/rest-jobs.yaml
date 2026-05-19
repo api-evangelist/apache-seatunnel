@@ -1,0 +1,192 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Apache SeaTunnel REST API — Jobs
+  description: 'Apache SeaTunnel REST API — Jobs. 4 operations. Lead operation: Apache SeaTunnel Stop Job. Self-contained
+    Naftiko capability covering one Apache Seatunnel business surface.'
+  tags:
+  - Apache Seatunnel
+  - Jobs
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    APACHE_SEATUNNEL_API_KEY: APACHE_SEATUNNEL_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: rest-jobs
+    baseUri: https://seatunnel.example.com/hazelcast/rest/maps
+    description: Apache SeaTunnel REST API — Jobs business capability. Self-contained, no shared references.
+    resources:
+    - name: job-stop
+      path: /job/stop
+      operations:
+      - name: stopjob
+        method: POST
+        description: Apache SeaTunnel Stop Job
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: job-submit
+      path: /job/submit
+      operations:
+      - name: submitjob
+        method: POST
+        description: Apache SeaTunnel Submit Job
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: job-jobId
+      path: /job/{jobId}
+      operations:
+      - name: getjob
+        method: GET
+        description: Apache SeaTunnel Get Job
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: jobId
+          in: path
+          type: string
+          required: true
+    - name: running-jobs
+      path: /running-jobs
+      operations:
+      - name: listrunningjobs
+        method: GET
+        description: Apache SeaTunnel List Running Jobs
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: rest-jobs-rest
+    port: 8080
+    description: REST adapter for Apache SeaTunnel REST API — Jobs. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/job/stop
+      name: job-stop
+      description: REST surface for job-stop.
+      operations:
+      - method: POST
+        name: stopjob
+        description: Apache SeaTunnel Stop Job
+        call: rest-jobs.stopjob
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/job/submit
+      name: job-submit
+      description: REST surface for job-submit.
+      operations:
+      - method: POST
+        name: submitjob
+        description: Apache SeaTunnel Submit Job
+        call: rest-jobs.submitjob
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/job/{jobid}
+      name: job-jobid
+      description: REST surface for job-jobId.
+      operations:
+      - method: GET
+        name: getjob
+        description: Apache SeaTunnel Get Job
+        call: rest-jobs.getjob
+        with:
+          jobId: rest.jobId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/running-jobs
+      name: running-jobs
+      description: REST surface for running-jobs.
+      operations:
+      - method: GET
+        name: listrunningjobs
+        description: Apache SeaTunnel List Running Jobs
+        call: rest-jobs.listrunningjobs
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: rest-jobs-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Apache SeaTunnel REST API — Jobs. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: apache-seatunnel-stop-job
+      description: Apache SeaTunnel Stop Job
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: rest-jobs.stopjob
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: apache-seatunnel-submit-job
+      description: Apache SeaTunnel Submit Job
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: rest-jobs.submitjob
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: apache-seatunnel-get-job
+      description: Apache SeaTunnel Get Job
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: rest-jobs.getjob
+      with:
+        jobId: tools.jobId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: apache-seatunnel-list-running-jobs
+      description: Apache SeaTunnel List Running Jobs
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: rest-jobs.listrunningjobs
+      outputParameters:
+      - type: object
+        mapping: $.
