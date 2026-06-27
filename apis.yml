@@ -35,9 +35,9 @@ apis:
     url: https://seatunnel.apache.org/docs/
   - type: OpenAPI
     url: openapi/apache-seatunnel-rest-api.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/rest-jobs.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/rest-monitoring.yaml
 maintainers:
 - FN: Kin Lane
