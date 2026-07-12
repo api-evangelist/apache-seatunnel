@@ -43,6 +43,10 @@ maintainers:
 - FN: Kin Lane
   email: info@apievangelist.com
 common:
+- type: VulnerabilityDisclosure
+  url: security/apache-seatunnel-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/apache-seatunnel-domain-security.yml
 - type: GitHubOrganization
   url: https://github.com/apache/seatunnel
 - type: Documentation
@@ -89,3 +93,5 @@ common:
     description: High-performance ClickHouse sink connector
   - name: Doris
     description: Apache Doris connector for analytical workloads
+- type: Blog
+  url: https://seatunnel.apache.org/blog/rss.xml
