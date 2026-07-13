@@ -1,0 +1,13 @@
+{
+  "repo": "apache-seatunnel",
+  "feeds": [
+    {
+      "source": "https://seatunnel.apache.org/blog",
+      "feed_url": "https://seatunnel.apache.org/blog/rss.xml",
+      "title": "Apache SeaTunnel Blog",
+      "saved": 20
+    }
+  ],
+  "fetched": "2026-07-11T11:43:46Z",
+  "post_count": 47
+}
