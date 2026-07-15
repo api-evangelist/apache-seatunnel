@@ -43,6 +43,8 @@ maintainers:
 - FN: Kin Lane
   email: info@apievangelist.com
 common:
+- type: AgenticAccess
+  url: agentic-access/apache-seatunnel-agentic-access.yml
 - type: VulnerabilityDisclosure
   url: security/apache-seatunnel-vulnerability-disclosure.yml
 - type: DomainSecurity
