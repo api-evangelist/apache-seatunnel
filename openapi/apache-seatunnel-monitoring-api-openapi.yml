@@ -1,0 +1,100 @@
+openapi: 3.0.3
+info:
+  title: Apache SeaTunnel REST Jobs Monitoring API
+  description: Apache SeaTunnel is a distributed, high-performance data integration platform. This API provides REST endpoints for managing data sync jobs, monitoring job execution, and administering the SeaTunnel cluster.
+  version: 2.3.0
+  contact:
+    name: Apache SeaTunnel
+    url: https://seatunnel.apache.org/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://seatunnel.example.com/hazelcast/rest/maps
+  description: Apache SeaTunnel REST API
+tags:
+- name: Monitoring
+paths:
+  /system-monitoring-information:
+    get:
+      operationId: getSystemInfo
+      summary: Apache SeaTunnel Get System Info
+      description: Get system monitoring information for the SeaTunnel cluster.
+      tags:
+      - Monitoring
+      x-microcks-operation:
+        dispatcher: RANDOM
+      responses:
+        '200':
+          description: System information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SystemInfo'
+  /overview:
+    get:
+      operationId: getOverview
+      summary: Apache SeaTunnel Get Overview
+      description: Get an overview of the SeaTunnel cluster including job counts and worker status.
+      tags:
+      - Monitoring
+      x-microcks-operation:
+        dispatcher: RANDOM
+      responses:
+        '200':
+          description: Cluster overview
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClusterOverview'
+components:
+  schemas:
+    SystemInfo:
+      type: object
+      description: SeaTunnel system monitoring information
+      properties:
+        processors:
+          type: integer
+          description: Number of CPU processors
+        physicalMemory:
+          type: integer
+          format: int64
+          description: Total physical memory in bytes
+        freePhysicalMemory:
+          type: integer
+          format: int64
+          description: Free physical memory in bytes
+        totalHeapMemory:
+          type: integer
+          format: int64
+        freeHeapMemory:
+          type: integer
+          format: int64
+        usedHeapMemory:
+          type: integer
+          format: int64
+    ClusterOverview:
+      type: object
+      description: High-level cluster overview
+      properties:
+        workers:
+          type: integer
+          description: Number of worker nodes
+        runningJobs:
+          type: integer
+          description: Number of running jobs
+        finishedJobs:
+          type: integer
+          description: Number of finished jobs
+        failedJobs:
+          type: integer
+          description: Number of failed jobs
+        canceledJobs:
+          type: integer
+          description: Number of canceled jobs
+        totalSlot:
+          type: integer
+          description: Total available task slots
+        usedSlot:
+          type: integer
+          description: Currently used task slots
