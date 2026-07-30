@@ -3,9 +3,21 @@ name: Apache SeaTunnel
 description: Apache SeaTunnel is a high-performance, distributed data integration platform that supports real-time and batch
   data synchronization. It provides a connector API with support for over 100 data sources and sinks.
 type: Index
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/apache-seatunnel.png
 tags:
 - Data Integration
 - ETL
@@ -19,22 +31,32 @@ modified: '2026-05-19'
 url: https://raw.githubusercontent.com/api-evangelist/apache-seatunnel/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
-- aid: apache-seatunnel:apache-seatunnel-rest-api
-  name: Apache SeaTunnel REST API
-  description: SeaTunnel provides a REST API for job management and monitoring, a Connector API for building custom data sources
-    and sinks, and a Transform API for data transformation, supporting over 100 built-in connectors.
+- aid: apache-seatunnel:apache-seatunnel-jobs-api
+  name: Apache SeaTunnel Jobs API
+  description: The Jobs API from Apache SeaTunnel — 4 operation(s) for jobs.
   humanURL: https://seatunnel.apache.org/docs/
   tags:
-  - Data Integration
-  - Job Management
-  - REST
-  - Apache
-  - Open Source
+  - Jobs
   properties:
+  - type: OpenAPI
+    url: openapi/apache-seatunnel-jobs-api-openapi.yml
   - type: Documentation
     url: https://seatunnel.apache.org/docs/
+  - type: X-NaftikoCapability
+    url: capabilities/rest-jobs.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/rest-monitoring.yaml
+- aid: apache-seatunnel:apache-seatunnel-monitoring-api
+  name: Apache SeaTunnel Monitoring API
+  description: The Monitoring API from Apache SeaTunnel — 2 operation(s) for monitoring.
+  humanURL: https://seatunnel.apache.org/docs/
+  tags:
+  - Monitoring
+  properties:
   - type: OpenAPI
-    url: openapi/apache-seatunnel-rest-api.yaml
+    url: openapi/apache-seatunnel-monitoring-api-openapi.yml
+  - type: Documentation
+    url: https://seatunnel.apache.org/docs/
   - type: X-NaftikoCapability
     url: capabilities/rest-jobs.yaml
   - type: X-NaftikoCapability
