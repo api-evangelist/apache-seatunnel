@@ -1,0 +1,16 @@
+{
+  "provider": "apache-seatunnel",
+  "sources": [
+    "apache-seatunnel-jobs-api-openapi.yml",
+    "apache-seatunnel-monitoring-api-openapi.yml"
+  ],
+  "outputs": [
+    "apache-seatunnel-jobs-api-openapi.yml",
+    "apache-seatunnel-monitoring-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

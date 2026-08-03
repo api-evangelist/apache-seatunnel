@@ -1,0 +1,294 @@
+openapi: 3.0.3
+info:
+  title: Apache SeaTunnel REST API
+  description: Apache SeaTunnel is a distributed, high-performance data integration platform. This API provides REST endpoints for managing data sync jobs, monitoring job execution, and administering the SeaTunnel cluster.
+  version: 2.3.0
+  contact:
+    name: Apache SeaTunnel
+    url: https://seatunnel.apache.org/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+  - url: https://seatunnel.example.com/hazelcast/rest/maps
+    description: Apache SeaTunnel REST API
+
+paths:
+  /running-jobs:
+    get:
+      operationId: listRunningJobs
+      summary: Apache SeaTunnel List Running Jobs
+      description: List all currently running SeaTunnel data sync jobs.
+      tags: [Jobs]
+      x-microcks-operation:
+        dispatcher: RANDOM
+      responses:
+        '200':
+          description: List of running jobs
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobList'
+  /job/submit:
+    post:
+      operationId: submitJob
+      summary: Apache SeaTunnel Submit Job
+      description: Submit a new SeaTunnel data sync job for execution.
+      tags: [Jobs]
+      x-microcks-operation:
+        dispatcher: RANDOM
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JobSubmitRequest'
+      responses:
+        '200':
+          description: Job submitted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobSubmitResult'
+  /job/{jobId}:
+    get:
+      operationId: getJob
+      summary: Apache SeaTunnel Get Job
+      description: Get the status and details of a specific SeaTunnel job.
+      tags: [Jobs]
+      x-microcks-operation:
+        dispatcher: URI_PARTS
+        dispatcherRules: jobId
+      parameters:
+        - name: jobId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Job details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobDetail'
+  /job/stop:
+    post:
+      operationId: stopJob
+      summary: Apache SeaTunnel Stop Job
+      description: Stop a running SeaTunnel data sync job.
+      tags: [Jobs]
+      x-microcks-operation:
+        dispatcher: RANDOM
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JobStopRequest'
+      responses:
+        '200':
+          description: Job stop result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobStopResult'
+  /system-monitoring-information:
+    get:
+      operationId: getSystemInfo
+      summary: Apache SeaTunnel Get System Info
+      description: Get system monitoring information for the SeaTunnel cluster.
+      tags: [Monitoring]
+      x-microcks-operation:
+        dispatcher: RANDOM
+      responses:
+        '200':
+          description: System information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SystemInfo'
+  /overview:
+    get:
+      operationId: getOverview
+      summary: Apache SeaTunnel Get Overview
+      description: Get an overview of the SeaTunnel cluster including job counts and worker status.
+      tags: [Monitoring]
+      x-microcks-operation:
+        dispatcher: RANDOM
+      responses:
+        '200':
+          description: Cluster overview
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClusterOverview'
+
+components:
+  schemas:
+    JobList:
+      type: object
+      description: List of SeaTunnel jobs
+      properties:
+        jobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/JobInfo'
+        total:
+          type: integer
+    JobInfo:
+      type: object
+      description: Summary info for a SeaTunnel job
+      properties:
+        jobId:
+          type: string
+          description: Job identifier
+        jobName:
+          type: string
+          description: Job name
+        jobStatus:
+          type: string
+          enum: [RUNNING, FINISHED, FAILED, CANCELED, CANCELLING]
+          description: Current job status
+        createTime:
+          type: string
+          format: date-time
+        finishTime:
+          type: string
+          format: date-time
+    JobSubmitRequest:
+      type: object
+      description: Request to submit a SeaTunnel job
+      required: [jobContent]
+      properties:
+        jobContent:
+          type: string
+          description: SeaTunnel job configuration in JSON or HOCON format
+        jobName:
+          type: string
+          description: Optional job name
+        isStartWithSavePoint:
+          type: boolean
+          description: Whether to start from a savepoint
+    JobSubmitResult:
+      type: object
+      description: Result of submitting a job
+      properties:
+        jobId:
+          type: string
+          description: Assigned job identifier
+        jobName:
+          type: string
+    JobDetail:
+      type: object
+      description: Detailed information about a SeaTunnel job
+      properties:
+        jobId:
+          type: string
+        jobName:
+          type: string
+        jobStatus:
+          type: string
+          enum: [RUNNING, FINISHED, FAILED, CANCELED, CANCELLING]
+        jobDag:
+          type: object
+          description: Job DAG definition
+        metrics:
+          $ref: '#/components/schemas/JobMetrics'
+        createTime:
+          type: string
+          format: date-time
+        finishTime:
+          type: string
+          format: date-time
+        errorMsg:
+          type: string
+          description: Error message if job failed
+    JobMetrics:
+      type: object
+      description: Runtime metrics for a SeaTunnel job
+      properties:
+        sourceReceivedCount:
+          type: integer
+          format: int64
+          description: Total records read from source
+        sinkWriteCount:
+          type: integer
+          format: int64
+          description: Total records written to sink
+        sourceReceivedQPS:
+          type: number
+          description: Records per second from source
+        sinkWriteQPS:
+          type: number
+          description: Records per second to sink
+    JobStopRequest:
+      type: object
+      description: Request to stop a SeaTunnel job
+      required: [jobId]
+      properties:
+        jobId:
+          type: string
+          description: Job identifier to stop
+        isStopWithSavePoint:
+          type: boolean
+          description: Whether to create a savepoint before stopping
+    JobStopResult:
+      type: object
+      description: Result of stopping a job
+      properties:
+        jobId:
+          type: string
+        status:
+          type: string
+        message:
+          type: string
+    SystemInfo:
+      type: object
+      description: SeaTunnel system monitoring information
+      properties:
+        processors:
+          type: integer
+          description: Number of CPU processors
+        physicalMemory:
+          type: integer
+          format: int64
+          description: Total physical memory in bytes
+        freePhysicalMemory:
+          type: integer
+          format: int64
+          description: Free physical memory in bytes
+        totalHeapMemory:
+          type: integer
+          format: int64
+        freeHeapMemory:
+          type: integer
+          format: int64
+        usedHeapMemory:
+          type: integer
+          format: int64
+    ClusterOverview:
+      type: object
+      description: High-level cluster overview
+      properties:
+        workers:
+          type: integer
+          description: Number of worker nodes
+        runningJobs:
+          type: integer
+          description: Number of running jobs
+        finishedJobs:
+          type: integer
+          description: Number of finished jobs
+        failedJobs:
+          type: integer
+          description: Number of failed jobs
+        canceledJobs:
+          type: integer
+          description: Number of canceled jobs
+        totalSlot:
+          type: integer
+          description: Total available task slots
+        usedSlot:
+          type: integer
+          description: Currently used task slots
