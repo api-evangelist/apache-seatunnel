@@ -42,10 +42,6 @@ apis:
     url: openapi/apache-seatunnel-jobs-api-openapi.yml
   - type: Documentation
     url: https://seatunnel.apache.org/docs/
-  - type: X-NaftikoCapability
-    url: capabilities/rest-jobs.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-monitoring.yaml
 - aid: apache-seatunnel:apache-seatunnel-monitoring-api
   name: Apache SeaTunnel Monitoring API
   description: The Monitoring API from Apache SeaTunnel — 2 operation(s) for monitoring.
@@ -57,10 +53,6 @@ apis:
     url: openapi/apache-seatunnel-monitoring-api-openapi.yml
   - type: Documentation
     url: https://seatunnel.apache.org/docs/
-  - type: X-NaftikoCapability
-    url: capabilities/rest-jobs.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-monitoring.yaml
 maintainers:
 - FN: Kin Lane
   email: info@apievangelist.com
