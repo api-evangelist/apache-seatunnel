@@ -1,0 +1,77 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache SeaTunnel REST Jobs API",
+    "version": "2.3.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Jobs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache SeaTunnel List Running Jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://seatunnel.example.com/hazelcast/rest/maps/running-jobs"
+          },
+          "docs": "List all currently running SeaTunnel data sync jobs."
+        },
+        {
+          "info": {
+            "name": "Apache SeaTunnel Submit Job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://seatunnel.example.com/hazelcast/rest/maps/job/submit",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Submit a new SeaTunnel data sync job for execution."
+        },
+        {
+          "info": {
+            "name": "Apache SeaTunnel Get Job",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://seatunnel.example.com/hazelcast/rest/maps/job/:jobId",
+            "params": [
+              {
+                "name": "jobId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get the status and details of a specific SeaTunnel job."
+        },
+        {
+          "info": {
+            "name": "Apache SeaTunnel Stop Job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://seatunnel.example.com/hazelcast/rest/maps/job/stop",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Stop a running SeaTunnel data sync job."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

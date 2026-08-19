@@ -1,0 +1,376 @@
+{
+  "item": [
+    {
+      "id": "c37be13c-533f-4a45-bcc1-5e8f41176bf6",
+      "name": "Jobs",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9625747f-a4f4-4497-af22-87d865f12d83",
+          "name": "Apache SeaTunnel List Running Jobs",
+          "request": {
+            "name": "Apache SeaTunnel List Running Jobs",
+            "description": {
+              "content": "List all currently running SeaTunnel data sync jobs.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "running-jobs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a1963e31-4c42-4985-afcb-2685de7e9601",
+              "name": "List of running jobs",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "running-jobs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"jobs\": [\n    {\n      \"jobId\": \"string\",\n      \"jobName\": \"string\",\n      \"jobStatus\": \"FINISHED\",\n      \"createTime\": \"1991-04-30T16:28:52.422Z\",\n      \"finishTime\": \"1987-10-09T15:50:20.023Z\"\n    },\n    {\n      \"jobId\": \"string\",\n      \"jobName\": \"string\",\n      \"jobStatus\": \"CANCELLING\",\n      \"createTime\": \"2011-07-07T20:14:15.840Z\",\n      \"finishTime\": \"1975-10-18T00:13:10.284Z\"\n    }\n  ],\n  \"total\": 4365\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "947287d8-5c81-46a2-8c99-a1e8ea7b342a",
+          "name": "Apache SeaTunnel Submit Job",
+          "request": {
+            "name": "Apache SeaTunnel Submit Job",
+            "description": {
+              "content": "Submit a new SeaTunnel data sync job for execution.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "job",
+                "submit"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"jobContent\": \"<string>\",\n  \"jobName\": \"<string>\",\n  \"isStartWithSavePoint\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "384b540f-5e99-4785-942c-67933435a6c6",
+              "name": "Job submitted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "job",
+                    "submit"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"jobContent\": \"<string>\",\n  \"jobName\": \"<string>\",\n  \"isStartWithSavePoint\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"jobId\": \"string\",\n  \"jobName\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "11f60e3b-7495-4ef1-8602-053629ab3001",
+          "name": "Apache SeaTunnel Get Job",
+          "request": {
+            "name": "Apache SeaTunnel Get Job",
+            "description": {
+              "content": "Get the status and details of a specific SeaTunnel job.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "job",
+                ":jobId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "jobId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "54b17f17-afd2-4ac7-8a84-cecf94425b1d",
+              "name": "Job details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "job",
+                    ":jobId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "jobId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"jobId\": \"string\",\n  \"jobName\": \"string\",\n  \"jobStatus\": \"RUNNING\",\n  \"jobDag\": {},\n  \"metrics\": {\n    \"sourceReceivedCount\": 4092,\n    \"sinkWriteCount\": 6541,\n    \"sourceReceivedQPS\": 7968.817996384066,\n    \"sinkWriteQPS\": 1681.891339319348\n  },\n  \"createTime\": \"1955-04-28T00:09:47.461Z\",\n  \"finishTime\": \"2010-11-25T16:01:43.537Z\",\n  \"errorMsg\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a739b1f1-5c95-43b2-b950-284c322157da",
+          "name": "Apache SeaTunnel Stop Job",
+          "request": {
+            "name": "Apache SeaTunnel Stop Job",
+            "description": {
+              "content": "Stop a running SeaTunnel data sync job.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "job",
+                "stop"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"jobId\": \"<string>\",\n  \"isStopWithSavePoint\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1f20d911-98e5-457c-8f57-1e6bfa44b7f5",
+              "name": "Job stop result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "job",
+                    "stop"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"jobId\": \"<string>\",\n  \"isStopWithSavePoint\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"jobId\": \"string\",\n  \"status\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://seatunnel.example.com/hazelcast/rest/maps",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "cbef18b1-b906-4765-8493-8e9860399a2e",
+    "name": "Apache SeaTunnel REST Jobs API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Apache SeaTunnel is a distributed, high-performance data integration platform. This API provides REST endpoints for managing data sync jobs, monitoring job execution, and administering the SeaTunnel cluster.\n\nContact Support:\n Name: Apache SeaTunnel",
+      "type": "text/plain"
+    }
+  }
+}

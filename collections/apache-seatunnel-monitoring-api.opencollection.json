@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache SeaTunnel REST Jobs Monitoring API",
+    "version": "2.3.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Monitoring",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache SeaTunnel Get System Info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://seatunnel.example.com/hazelcast/rest/maps/system-monitoring-information"
+          },
+          "docs": "Get system monitoring information for the SeaTunnel cluster."
+        },
+        {
+          "info": {
+            "name": "Apache SeaTunnel Get Overview",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://seatunnel.example.com/hazelcast/rest/maps/overview"
+          },
+          "docs": "Get an overview of the SeaTunnel cluster including job counts and worker status."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

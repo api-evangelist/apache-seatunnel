@@ -1,0 +1,172 @@
+{
+  "item": [
+    {
+      "id": "b80ea80a-68de-42c9-8767-3d8554b1faf6",
+      "name": "Monitoring",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d289948a-c8b8-4a24-8170-9978ab28aff0",
+          "name": "Apache SeaTunnel Get System Info",
+          "request": {
+            "name": "Apache SeaTunnel Get System Info",
+            "description": {
+              "content": "Get system monitoring information for the SeaTunnel cluster.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "system-monitoring-information"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0eb7321a-2d68-41d4-bbc0-5e90a253b8d8",
+              "name": "System information",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "system-monitoring-information"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"processors\": 1634,\n  \"physicalMemory\": 9323,\n  \"freePhysicalMemory\": 2562,\n  \"totalHeapMemory\": 2290,\n  \"freeHeapMemory\": 266,\n  \"usedHeapMemory\": 5463\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e579bf48-1816-45b8-a5bb-9305224346f5",
+          "name": "Apache SeaTunnel Get Overview",
+          "request": {
+            "name": "Apache SeaTunnel Get Overview",
+            "description": {
+              "content": "Get an overview of the SeaTunnel cluster including job counts and worker status.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "overview"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3944af67-d10f-4ab0-a964-d08bfe3d4169",
+              "name": "Cluster overview",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "overview"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"workers\": 230,\n  \"runningJobs\": 8154,\n  \"finishedJobs\": 604,\n  \"failedJobs\": 2867,\n  \"canceledJobs\": 1666,\n  \"totalSlot\": 2391,\n  \"usedSlot\": 6792\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://seatunnel.example.com/hazelcast/rest/maps",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "88f46cac-39f4-409c-aaef-6f0770eac08d",
+    "name": "Apache SeaTunnel REST Jobs Monitoring API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Apache SeaTunnel is a distributed, high-performance data integration platform. This API provides REST endpoints for managing data sync jobs, monitoring job execution, and administering the SeaTunnel cluster.\n\nContact Support:\n Name: Apache SeaTunnel",
+      "type": "text/plain"
+    }
+  }
+}
