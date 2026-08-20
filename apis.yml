@@ -25,6 +25,14 @@ tags:
 - Batch
 - Streaming
 - Apache
+- Open-Source
+tags_raw:
+- Data Integration
+- ETL
+- ELT
+- Batch
+- Streaming
+- Apache
 - Open Source
 created: '2026-03-16'
 modified: '2026-05-19'
@@ -36,6 +44,8 @@ apis:
   description: The Jobs API from Apache SeaTunnel — 4 operation(s) for jobs.
   humanURL: https://seatunnel.apache.org/docs/
   tags:
+  - Job
+  tags_raw:
   - Jobs
   properties:
   - type: OpenAPI
