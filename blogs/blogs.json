@@ -5,12 +5,12 @@
       "source": "https://seatunnel.apache.org/blog",
       "feed_url": "https://seatunnel.apache.org/blog/rss.xml",
       "title": "Apache SeaTunnel Blog",
-      "saved": 1,
+      "saved": 0,
       "nature": "vendor-blog",
       "nature_basis": "path_blog"
     }
   ],
-  "fetched": "2026-09-06T18:58:10Z",
+  "fetched": "2026-09-13T12:41:53Z",
   "post_count": 51,
   "feed_nature": "vendor-blog",
   "feed_nature_basis": "path_blog",
