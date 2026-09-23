@@ -1,8 +1,7 @@
 {
   "provider": "apache-seatunnel",
   "sources": [
-    "apache-seatunnel-jobs-api-openapi.yml",
-    "apache-seatunnel-monitoring-api-openapi.yml"
+    "_original/apache-seatunnel-rest-api.yaml"
   ],
   "outputs": [
     "apache-seatunnel-jobs-api-openapi.yml",
@@ -11,6 +10,15 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "apache-seatunnel-rest-api.yaml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apache-seatunnel-rest-api.yaml: declared missing tag: Jobs",
+    "apache-seatunnel-rest-api.yaml: declared missing tag: Monitoring",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "apache-seatunnel-jobs-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apache-seatunnel-monitoring-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

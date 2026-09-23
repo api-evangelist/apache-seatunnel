@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Apache SeaTunnel REST Jobs Monitoring API
+  title: Apache SeaTunnel REST Monitoring API
   description: Apache SeaTunnel is a distributed, high-performance data integration platform. This API provides REST endpoints for managing data sync jobs, monitoring job execution, and administering the SeaTunnel cluster.
   version: 2.3.0
   contact:
