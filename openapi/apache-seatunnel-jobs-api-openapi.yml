@@ -100,21 +100,31 @@ paths:
                 $ref: '#/components/schemas/JobStopResult'
 components:
   schemas:
-    JobSubmitRequest:
+    JobInfo:
       type: object
-      description: Request to submit a SeaTunnel job
-      required:
-      - jobContent
+      description: Summary info for a SeaTunnel job
       properties:
-        jobContent:
+        jobId:
           type: string
-          description: SeaTunnel job configuration in JSON or HOCON format
+          description: Job identifier
         jobName:
           type: string
-          description: Optional job name
-        isStartWithSavePoint:
-          type: boolean
-          description: Whether to start from a savepoint
+          description: Job name
+        jobStatus:
+          type: string
+          enum:
+          - RUNNING
+          - FINISHED
+          - FAILED
+          - CANCELED
+          - CANCELLING
+          description: Current job status
+        createTime:
+          type: string
+          format: date-time
+        finishTime:
+          type: string
+          format: date-time
     JobStopRequest:
       type: object
       description: Request to stop a SeaTunnel job
@@ -127,6 +137,16 @@ components:
         isStopWithSavePoint:
           type: boolean
           description: Whether to create a savepoint before stopping
+    JobList:
+      type: object
+      description: List of SeaTunnel jobs
+      properties:
+        jobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/JobInfo'
+        total:
+          type: integer
     JobDetail:
       type: object
       description: Detailed information about a SeaTunnel job
@@ -167,31 +187,30 @@ components:
           type: string
         message:
           type: string
-    JobInfo:
+    JobSubmitResult:
       type: object
-      description: Summary info for a SeaTunnel job
+      description: Result of submitting a job
       properties:
         jobId:
           type: string
-          description: Job identifier
+          description: Assigned job identifier
         jobName:
           type: string
-          description: Job name
-        jobStatus:
+    JobSubmitRequest:
+      type: object
+      description: Request to submit a SeaTunnel job
+      required:
+      - jobContent
+      properties:
+        jobContent:
           type: string
-          enum:
-          - RUNNING
-          - FINISHED
-          - FAILED
-          - CANCELED
-          - CANCELLING
-          description: Current job status
-        createTime:
+          description: SeaTunnel job configuration in JSON or HOCON format
+        jobName:
           type: string
-          format: date-time
-        finishTime:
-          type: string
-          format: date-time
+          description: Optional job name
+        isStartWithSavePoint:
+          type: boolean
+          description: Whether to start from a savepoint
     JobMetrics:
       type: object
       description: Runtime metrics for a SeaTunnel job
@@ -210,22 +229,3 @@ components:
         sinkWriteQPS:
           type: number
           description: Records per second to sink
-    JobSubmitResult:
-      type: object
-      description: Result of submitting a job
-      properties:
-        jobId:
-          type: string
-          description: Assigned job identifier
-        jobName:
-          type: string
-    JobList:
-      type: object
-      description: List of SeaTunnel jobs
-      properties:
-        jobs:
-          type: array
-          items:
-            $ref: '#/components/schemas/JobInfo'
-        total:
-          type: integer

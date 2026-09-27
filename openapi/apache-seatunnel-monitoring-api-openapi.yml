@@ -49,30 +49,6 @@ paths:
                 $ref: '#/components/schemas/ClusterOverview'
 components:
   schemas:
-    SystemInfo:
-      type: object
-      description: SeaTunnel system monitoring information
-      properties:
-        processors:
-          type: integer
-          description: Number of CPU processors
-        physicalMemory:
-          type: integer
-          format: int64
-          description: Total physical memory in bytes
-        freePhysicalMemory:
-          type: integer
-          format: int64
-          description: Free physical memory in bytes
-        totalHeapMemory:
-          type: integer
-          format: int64
-        freeHeapMemory:
-          type: integer
-          format: int64
-        usedHeapMemory:
-          type: integer
-          format: int64
     ClusterOverview:
       type: object
       description: High-level cluster overview
@@ -98,3 +74,27 @@ components:
         usedSlot:
           type: integer
           description: Currently used task slots
+    SystemInfo:
+      type: object
+      description: SeaTunnel system monitoring information
+      properties:
+        processors:
+          type: integer
+          description: Number of CPU processors
+        physicalMemory:
+          type: integer
+          format: int64
+          description: Total physical memory in bytes
+        freePhysicalMemory:
+          type: integer
+          format: int64
+          description: Free physical memory in bytes
+        totalHeapMemory:
+          type: integer
+          format: int64
+        freeHeapMemory:
+          type: integer
+          format: int64
+        usedHeapMemory:
+          type: integer
+          format: int64
