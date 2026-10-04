@@ -130,41 +130,6 @@ components:
         errorMsg:
           type: string
           description: Error message if job failed
-    JobStopResult:
-      type: object
-      description: Result of stopping a job
-      properties:
-        jobId:
-          type: string
-        status:
-          type: string
-        message:
-          type: string
-    JobList:
-      type: object
-      description: List of SeaTunnel jobs
-      properties:
-        jobs:
-          type: array
-          items:
-            $ref: '#/components/schemas/JobInfo'
-        total:
-          type: integer
-    JobSubmitRequest:
-      type: object
-      description: Request to submit a SeaTunnel job
-      required:
-      - jobContent
-      properties:
-        jobContent:
-          type: string
-          description: SeaTunnel job configuration in JSON or HOCON format
-        jobName:
-          type: string
-          description: Optional job name
-        isStartWithSavePoint:
-          type: boolean
-          description: Whether to start from a savepoint
     JobInfo:
       type: object
       description: Summary info for a SeaTunnel job
@@ -190,27 +155,6 @@ components:
         finishTime:
           type: string
           format: date-time
-    JobSubmitResult:
-      type: object
-      description: Result of submitting a job
-      properties:
-        jobId:
-          type: string
-          description: Assigned job identifier
-        jobName:
-          type: string
-    JobStopRequest:
-      type: object
-      description: Request to stop a SeaTunnel job
-      required:
-      - jobId
-      properties:
-        jobId:
-          type: string
-          description: Job identifier to stop
-        isStopWithSavePoint:
-          type: boolean
-          description: Whether to create a savepoint before stopping
     JobMetrics:
       type: object
       description: Runtime metrics for a SeaTunnel job
@@ -229,3 +173,59 @@ components:
         sinkWriteQPS:
           type: number
           description: Records per second to sink
+    JobStopResult:
+      type: object
+      description: Result of stopping a job
+      properties:
+        jobId:
+          type: string
+        status:
+          type: string
+        message:
+          type: string
+    JobList:
+      type: object
+      description: List of SeaTunnel jobs
+      properties:
+        jobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/JobInfo'
+        total:
+          type: integer
+    JobSubmitResult:
+      type: object
+      description: Result of submitting a job
+      properties:
+        jobId:
+          type: string
+          description: Assigned job identifier
+        jobName:
+          type: string
+    JobSubmitRequest:
+      type: object
+      description: Request to submit a SeaTunnel job
+      required:
+      - jobContent
+      properties:
+        jobContent:
+          type: string
+          description: SeaTunnel job configuration in JSON or HOCON format
+        jobName:
+          type: string
+          description: Optional job name
+        isStartWithSavePoint:
+          type: boolean
+          description: Whether to start from a savepoint
+    JobStopRequest:
+      type: object
+      description: Request to stop a SeaTunnel job
+      required:
+      - jobId
+      properties:
+        jobId:
+          type: string
+          description: Job identifier to stop
+        isStopWithSavePoint:
+          type: boolean
+          description: Whether to create a savepoint before stopping
