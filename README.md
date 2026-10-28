@@ -1,4 +1,4 @@
-# Apache SeaTunnel (apache-seatunnel)
+# Apache SeaTunnel
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,123 +64,183 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Apache SeaTunnel is a high-performance, distributed data integration platform that supports real-time and batch data synchronization. It provides a connector API with support for over 200 data sources and sinks.
+Apache SeaTunnel is a high-performance, distributed data integration platform that supports real-time and batch data synchronization. It provides a connector API with support for over 100 data sources and sinks.
 
-**URL:** [https://raw.githubusercontent.com/api-evangelist/apache-seatunnel/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/apache-seatunnel/refs/heads/main/apis.yml)
+**Areas:** Data Integration · ETL · ELT · Batch · Streaming · Apache · Open Source
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Apache SeaTunnel on APIs.io
 
-## Tags:
+Everything profiled for Apache SeaTunnel is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/apache-seatunnel/](https://apis.io/providers/apache-seatunnel/)** — or go straight to one of the APIs or properties below.
 
- - Data Integration, ETL, ELT, Batch, Streaming, Apache, Open Source
+### APIs (2)
 
-## Timestamps
+- [Apache SeaTunnel Jobs API](https://apis.io/apis/apache-seatunnel/apache-seatunnel-jobs-api/) — The Jobs API from Apache SeaTunnel — 4 operation(s) for jobs.
+- [Apache SeaTunnel Monitoring API](https://apis.io/apis/apache-seatunnel/apache-seatunnel-monitoring-api/) — The Monitoring API from Apache SeaTunnel — 2 operation(s) for monitoring.
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Apache SeaTunnel REST API
-SeaTunnel provides REST endpoints for job submission, status monitoring, and cluster management, along with a Connector API for building custom data sources and sinks supporting over 200 built-in connectors.
+#### Agentic access (1)
 
-**Human URL:** [https://seatunnel.apache.org/docs/](https://seatunnel.apache.org/docs/)
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags:
+- [Apache Seatunnel Agentic Access](https://apis.io/agentic-access/apache-seatunnel/apache-seatunnel-agentic-access/)
 
- - Data Integration, Job Management, REST, Apache, Open Source
+#### JSON Schema (10)
 
-#### Properties
+The data models the API reads and writes.
 
-- [Documentation](https://seatunnel.apache.org/docs/)
-- [OpenAPI](openapi/apache-seatunnel-rest-api.yaml)
+- [ClusterOverview](https://apis.io/schemas/apache-seatunnel/apache-seatunnel-cluster-overview/)
+- [JobDetail](https://apis.io/schemas/apache-seatunnel/apache-seatunnel-job-detail/)
+- [JobInfo](https://apis.io/schemas/apache-seatunnel/apache-seatunnel-job-info/)
+- [JobList](https://apis.io/schemas/apache-seatunnel/apache-seatunnel-job-list/)
+- [JobMetrics](https://apis.io/schemas/apache-seatunnel/apache-seatunnel-job-metrics/)
+- [JobStopRequest](https://apis.io/schemas/apache-seatunnel/apache-seatunnel-job-stop-request/)
+- [JobStopResult](https://apis.io/schemas/apache-seatunnel/apache-seatunnel-job-stop-result/)
+- [JobSubmitRequest](https://apis.io/schemas/apache-seatunnel/apache-seatunnel-job-submit-request/)
+- [JobSubmitResult](https://apis.io/schemas/apache-seatunnel/apache-seatunnel-job-submit-result/)
+- [SystemInfo](https://apis.io/schemas/apache-seatunnel/apache-seatunnel-system-info/)
 
-## Common Properties
+#### JSON Structure (10)
 
-- [GitHubOrganization](https://github.com/apache/seatunnel)
+Data models expressed in JSON Structure.
+
+- [Apache Seatunnel Cluster Overview Structure](https://apis.io/json-structure/apache-seatunnel/apache-seatunnel-cluster-overview-structure/)
+- [Apache Seatunnel Job Detail Structure](https://apis.io/json-structure/apache-seatunnel/apache-seatunnel-job-detail-structure/)
+- [Apache Seatunnel Job Info Structure](https://apis.io/json-structure/apache-seatunnel/apache-seatunnel-job-info-structure/)
+- [Apache Seatunnel Job List Structure](https://apis.io/json-structure/apache-seatunnel/apache-seatunnel-job-list-structure/)
+- [Apache Seatunnel Job Metrics Structure](https://apis.io/json-structure/apache-seatunnel/apache-seatunnel-job-metrics-structure/)
+- [Apache Seatunnel Job Stop Request Structure](https://apis.io/json-structure/apache-seatunnel/apache-seatunnel-job-stop-request-structure/)
+- [Apache Seatunnel Job Stop Result Structure](https://apis.io/json-structure/apache-seatunnel/apache-seatunnel-job-stop-result-structure/)
+- [Apache Seatunnel Job Submit Request Structure](https://apis.io/json-structure/apache-seatunnel/apache-seatunnel-job-submit-request-structure/)
+- [Apache Seatunnel Job Submit Result Structure](https://apis.io/json-structure/apache-seatunnel/apache-seatunnel-job-submit-result-structure/)
+- [Apache Seatunnel System Info Structure](https://apis.io/json-structure/apache-seatunnel/apache-seatunnel-system-info-structure/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Apache Seatunnel Context](https://apis.io/jsonld/apache-seatunnel/apache-seatunnel-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Apache SeaTunnel Vocabulary](https://apis.io/vocabularies/apache-seatunnel/apache-seatunnel-vocabulary/)
+
+#### Examples (10)
+
+Example requests and responses.
+
+- [Apache Seatunnel Cluster Overview Example](https://apis.io/examples/apache-seatunnel/apache-seatunnel-cluster-overview-example/)
+- [Apache Seatunnel Job Detail Example](https://apis.io/examples/apache-seatunnel/apache-seatunnel-job-detail-example/)
+- [Apache Seatunnel Job Info Example](https://apis.io/examples/apache-seatunnel/apache-seatunnel-job-info-example/)
+- [Apache Seatunnel Job List Example](https://apis.io/examples/apache-seatunnel/apache-seatunnel-job-list-example/)
+- [Apache Seatunnel Job Metrics Example](https://apis.io/examples/apache-seatunnel/apache-seatunnel-job-metrics-example/)
+- [Apache Seatunnel Job Stop Request Example](https://apis.io/examples/apache-seatunnel/apache-seatunnel-job-stop-request-example/)
+- [Apache Seatunnel Job Stop Result Example](https://apis.io/examples/apache-seatunnel/apache-seatunnel-job-stop-result-example/)
+- [Apache Seatunnel Job Submit Request Example](https://apis.io/examples/apache-seatunnel/apache-seatunnel-job-submit-request-example/)
+- [Apache Seatunnel Job Submit Result Example](https://apis.io/examples/apache-seatunnel/apache-seatunnel-job-submit-result-example/)
+- [Apache Seatunnel System Info Example](https://apis.io/examples/apache-seatunnel/apache-seatunnel-system-info-example/)
+
+#### Collections (2)
+
+Postman and Open Collection request collections.
+
+- [Apache SeaTunnel REST Jobs API](https://apis.io/collections/apache-seatunnel/open-apache-seatunnel-jobs-api/)
+- [Apache SeaTunnel REST Jobs Monitoring API](https://apis.io/collections/apache-seatunnel/open-apache-seatunnel-monitoring-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Apache SeaTunnel — jsonschema rules](https://apis.io/rules/apache-seatunnel/apache-seatunnel-jsonschema-spectral-rules/)
+- [Apache SeaTunnel API Rules](https://apis.io/rules/apache-seatunnel/apache-seatunnel-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Apache Seatunnel Domain Security](https://apis.io/security/apache-seatunnel/apache-seatunnel-domain-security/)
+- [Apache Seatunnel Vulnerability Disclosure](https://apis.io/security/apache-seatunnel/apache-seatunnel-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Apache Seatunnel Plans Pricing](https://apis.io/plans/apache-seatunnel/apache-seatunnel-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Apache Seatunnel Rate Limits](https://apis.io/rate-limits/apache-seatunnel/apache-seatunnel-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Apache Seatunnel Finops](https://apis.io/finops/apache-seatunnel/apache-seatunnel-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.apache.org/)
 - [Documentation](https://seatunnel.apache.org/)
-- [SpectralRules](rules/apache-seatunnel-spectral-rules.yml)
-- [Vocabulary](vocabulary/apache-seatunnel-vocabulary.yaml)
-- [NaftikoCapability](capabilities/seatunnel-workflow.yaml)
-- [JSON-LD](json-ld/apache-seatunnel-context.jsonld)
+- [Blog](https://seatunnel.apache.org/blog/rss.xml)
+- [GitHub](https://github.com/apache/seatunnel)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| 200+ Connectors | Over 200 built-in connectors for databases, warehouses, and file systems |
-| Batch and Streaming | Unified API for both batch ETL and real-time streaming jobs |
-| Schema Evolution | Automatic schema detection and evolution support |
-| Distributed Execution | Zeta execution engine with no external dependencies |
-| CDC Support | Change Data Capture for real-time database synchronization |
-| Transform Layer | Built-in SQL and custom transform functions |
+**Kin Score 26.0** — emerging · rubric 0.24.0 · scored 2026-10-17
 
-## Use Cases
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 48.8 |
+| Contract governance | 27.3 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 11.9 |
+| Access clarity | 7.9 |
 
-| Name | Description |
-|------|-------------|
-| Database Migration | Migrate data between databases with schema mapping |
-| Data Warehouse Loading | Load and sync data into data warehouses |
-| Real-Time Synchronization | CDC-based real-time sync between source and target systems |
-| Data Lake Ingestion | Ingest data from multiple sources into a data lake |
+**Agent readiness 15.4** — agent-aware
 
-## Integrations
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
 
-| Name | Description |
-|------|-------------|
-| Apache Kafka | Kafka source and sink connector for streaming pipelines |
-| Apache Flink | Run SeaTunnel jobs on Flink execution engine |
-| Apache Spark | Run SeaTunnel jobs on Spark execution engine |
-| ClickHouse | High-performance ClickHouse sink connector |
-| Doris | Apache Doris connector for analytical workloads |
+**Regulatory alignment 16.7** — Horizontal (data, software, accessibility, platform)
 
-## Artifacts
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/apache-seatunnel/](https://apis.io/providers/apache-seatunnel/).
 
-Machine-readable API specifications organized by format.
+## How this profile is made
 
-### OpenAPI
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-- [Apache SeaTunnel REST API](openapi/apache-seatunnel-rest-api.yaml)
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Apache SeaTunnel: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-### JSON Schema
+## Open an issue
 
-- [Job Info](json-schema/apache-seatunnel-job-info-schema.json)
-- [Job Detail](json-schema/apache-seatunnel-job-detail-schema.json)
-- [Job Metrics](json-schema/apache-seatunnel-job-metrics-schema.json)
-- [And more...](json-schema/)
-
-### JSON Structure
-
-- [Apache SeaTunnel JSON Structures](json-structure/)
-
-### JSON-LD
-
-- [Apache SeaTunnel Context](json-ld/apache-seatunnel-context.jsonld)
-
-### Examples
-
-- [Apache SeaTunnel Examples](examples/)
-
-## Capabilities
-
-Naftiko capabilities organized as shared per-API definitions composed into customer-facing workflows.
-
-### Workflow Capabilities
-
-| Workflow | APIs Combined | Tools | Persona |
-|----------|--------------|-------|---------|
-| [Data Integration Workflow](capabilities/seatunnel-workflow.yaml) | Apache SeaTunnel | 6 | Data Engineer, Platform Engineer |
-
-## Vocabulary
-
-- [Apache SeaTunnel Vocabulary](vocabulary/apache-seatunnel-vocabulary.yaml) — Unified taxonomy mapping data integration resources, actions, workflows, and personas
-
-## Rules
-
-- [Apache SeaTunnel Spectral Rules](rules/apache-seatunnel-spectral-rules.yml) — Rules enforcing Apache SeaTunnel API conventions
-
-## Maintainers
-
-**FN:** Kin Lane
-
-**Email:** info@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/apache-seatunnel/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
